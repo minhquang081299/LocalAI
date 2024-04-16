@@ -1,0 +1,18 @@
+name: bge-m3
+backend: sentencetransformers
+embeddings: true
+parameters:
+    model: pytorch_model.bin
+
+download_files:
+    - filename: "bge-m3"
+    sha256: "b5e0ce3470abf5ef3831aa1bd5553b486803e83251590ab7ff35a117cf6aad38"
+    uri: "https://huggingface.co/BAAI/bge-m3/resolve/main/pytorch_model.bin"
+
+usage: |
+    You can test this model with curl like this:
+
+    curl http://localhost:8080/embeddings -X POST -H "Content-Type: application/json" -d '{
+      "input": "Your text string goes here",
+      "model": "bge-m3"
+    }'
